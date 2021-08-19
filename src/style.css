@@ -1,0 +1,289 @@
+* {
+	font-family: Helvetica, Arial, sans-serif;
+	color: #3F3E3D;
+  }
+  body {
+	background: white url(bg.png);
+	margin: 0;
+	padding: 0;
+  }
+  input:invalid:required {
+	background-image: rgb(210, 240, 40)
+  }
+  input {
+	width: 236px;
+	height: 38px;
+	border: 1px solid #D2D2D2;
+	padding: 0 10px;
+	outline: none;
+	font-size: 17px;
+  }
+  input:focus {
+	background: #ffffff;
+  }
+  input[type="tip"]{
+	-webkit-appearance: none;
+	appearance: none;
+  
+	width: 100%;
+	border: 1px solid #a09b9b;
+	margin: 0;
+  
+	font-family: inherit;
+	font-size: 90%;
+    height: 80%;
+	box-sizing: border-box;
+	
+  }
+  
+
+  input[type="inp"]{
+	-webkit-appearance: none;
+	appearance: none;
+  
+	width: 100%;
+	border: 1px solid #a09b9b;
+	margin: 0;
+  
+	font-family: inherit;
+	font-size: 90%;
+ 
+	box-sizing: border-box;
+  }
+
+  input[type="submit"] {
+	height: 36px;
+	width: auto;
+	border: 1px solid #74c0c5;
+	border-radius: 2px;
+	color: white;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 0 20px;
+	cursor: pointer;
+	background: #5abbe7;
+	background: -moz-linear-gradient(top, #5abbe7 0%, #5abbe7 23%, #5abbe7 86%, #5abbe7 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5abbe7), color-stop(23%, #5abbe7), color-stop(86%, #5abbe7), color-stop(100%, #5abbe7));
+	background: -webkit-linear-gradient(top, #5abbe7 0%, #5abbe7 23%, #5abbe7 86%, #5abbe7 100%);
+	background: -o-linear-gradient(top, #5abbe7 0%, #5abbe7 23%, #5abbe7 86%, #5abbe7 100%);
+	background: -ms-linear-gradient(top, #5abbe7 0%, #5abbe7 23%, #5abbe7 86%, #5abbe7 100%);
+	background: linear-gradient(to bottom, #5abbe7 0%, #5abbe7 23%, #5abbe7 86%, #5abbe7 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@c1', endColorstr='@c4', GradientType=0);
+  }
+  .icon {
+            padding: 10px;
+            min-width: 40px;
+        }
+           .input-icons i {
+            position: absolute;
+        }.input-icons i {
+            position: absolute;
+        }
+          
+        .input-icons {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+          
+        .icon {
+            padding: 10px;
+            min-width: 40px;
+        }
+          
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+        }
+		#input_container {
+    position:relative;
+    padding:0 0 0 20px;
+    margin:0 20px;
+    background:#ddd;
+    direction: rtl;
+    width: 200px;
+}
+.tip_input {
+    height:20px;
+    margin:0;
+    padding-right: 30px;
+    width: 100%;
+}
+#input_img {
+    position:absolute;
+    bottom:2px;
+    right:5px;
+    width:24px;
+    height:24px;
+}
+          
+  /* This is the style of our error messages */
+.error {
+	width  : 100%;
+	padding: 0;
+  
+	font-size: 80%;
+	color: white;
+	background-color: #900;
+	border-radius: 0 0 5px 5px;
+  
+	box-sizing: border-box;
+  }
+  
+  .error.active {
+	padding: 0.3em;
+  }
+  a {
+	text-decoration: none;
+	color: #58a5e4;
+	text-shadow: #58a5e4 0 0 1px;
+  }
+  a:hover {
+	text-decoration: underline;
+  }
+  .wrapper {
+	width: 860px;
+	margin: auto;
+  }
+  header {
+
+	height: 85px;
+	width: 100%;
+  }
+  header div.wrapper {
+	padding: 11px 0;
+  }
+  header div.wrapper img {
+	position: relative;
+	top: 10px;
+	margin: 0 15px 0 0;
+  }
+  header div.wrapper span {
+	font-size: 18px;
+	margin: 0 42px 0 0;
+  }
+  header div.wrapper form {
+	display: inline;
+  }
+  header div.wrapper form input {
+	margin: 0 0 0 14px;
+  }
+  header div.wrapper #btnLogOut {
+	float: center;
+	margin: 14px 0 0 0;
+  }
+  #content {
+	margin-bottom: 15px;
+	min-height: 560px;
+  }
+  #content div.wrapper {
+	margin: 38px auto;
+  }
+  #content div.wrapper img {
+	border-radius: 6px;
+	float: left;
+  }
+  #content div.wrapper div.panel {
+	border: 1px solid #D2D2D2;
+	background: white;
+	margin: 0;
+	margin-bottom: 29px;
+	border-radius: 6px;
+	font-size: 14px;
+  }
+
+.tipsText {
+	border: 4px solid #D2D2D2;
+	text-align: start;
+  }
+.nameHandle {
+	
+	border: 2px solid #D2D2D2;
+  }
+  .urlHandle {
+
+	border: 2px solid #D2D2D2;
+  }
+  #content div.wrapper div.panel.left {
+	width: 533px;
+	float: left;
+  }
+  #content div.wrapper div.panel.left div.tipsWrapper {
+	padding: 15px 0;
+	border-bottom: 4px solid #D2D2D2;
+  }
+  #content div.wrapper div.panel.left div.tipsWrapper:last-child {
+	border: none;
+  }
+  #content div.wrapper div.panel.left div.tipsWrapper span.name {
+	font-size: 18px;
+	color: #57c6e7;
+  }
+  #content div.wrapper div.panel.left div.tipsWrapper span.time {
+	font-size: 12px;
+	color: #CCC;
+  }
+  #content div.wrapper div.panel.left div.tipsWrapper img.avatar {
+	margin: 0 19px 0 20px;
+	float: left;
+  }
+  #content div.wrapper div.panel.left div.tipsWrapper p.tip {
+	margin: 5px 10px 0 10px;
+	padding: 0;
+	text-align: justify;
+	line-height: 1.5;
+	color: #7cb610;
+	text-shadow: #3F3E3D 0 0 1px;
+  }
+  .tip{
+	  margin-bottom: 0px;
+  }
+  #content div.wrapper div.panel h1 {
+	border-bottom: 1px solid #D2D2D2;
+	margin: 5px 0;
+	font-weight: normal;
+	font-size: 18px;
+	padding: 13px 23px;
+	height: 23px;
+  }
+  #content div.wrapper div.panel p {
+	padding: 0 24px;
+	margin: 18px 0;
+  }
+  footer {
+
+	height: 251px;
+	font-size: 14px;
+	clear: both;
+  }
+  footer div.wrapper {
+	padding: 15px;
+  }
+  footer div.wrapper img {
+	float: right;
+  }
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+ 
+ 
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+} 
+.parallax {
+  /* The image used */
+ 
+
+  /* Set a specific height */
+  min-height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
