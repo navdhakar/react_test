@@ -1,17 +1,24 @@
 import './style.css'
-import React, {useRef,useEffect} from 'react'
+import React, {useRef,useEffect, useState} from 'react'
 import { v4 as uuidv4 } from 'uuid';
 export default function PanelRight() {
+	const[codestate, changestate] = useState(false)
 const nameRef = useRef()
 const handleRef = useRef()
 const tipRef = useRef()
 const groupRef = useRef()
+const CodeRef = useRef()
 	function Tip_submit(e){
-		
+
+		if(CodeRef.current.value==""||null){
+			CodeRef.current.value="undefined"
+			console.log(CodeRef.current.value)
+		}
 		console.log("tip submitted")
 		console.log(nameRef.current.value)
 		console.log(tipRef.current.value)
 		console.log(handleRef.current.value)
+		console.log(CodeRef.current.value)
 		console.log(groupRef.current.value)
 		console.log(uuidv4())
 
@@ -20,8 +27,10 @@ const groupRef = useRef()
           username:nameRef.current.value,
           personal_url:handleRef.current.value,
           tip_language:groupRef.current.value,
+		  code:CodeRef.current.value,
 		  tip_dom_id:uuidv4()
     }
+
     fetch('/proctor_register', {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors',
@@ -43,6 +52,20 @@ const groupRef = useRef()
          
         })
 	}
+
+	function Addcode(addstate){
+		
+		console.log(addstate)
+		if(addstate.addstate==true){
+			console.log("true")
+		return <textarea ref={CodeRef} className="tipText" type="code" name="tipstext" id="tipstext"  placeholder="write your code"  required  maxLength="240"></textarea>
+		}
+		else{
+			console.log("false")
+			return null
+		}			
+	}
+
 	return (
 		
 
@@ -61,16 +84,21 @@ const groupRef = useRef()
                         	<select ref={groupRef} id="languages" style={{"border":"1px solid #dddddd"}}>
   								<option value="Javascript">Javascript</option>
   								<option value="Python">Python</option>
-  								<option value="C/C++">C/C++</option>
-  								<option value="Html/css">Html/CSS</option>
+  								<option value="C">C</option>
+								
+  								<option value="C++">C++</option>
+  								<option value="HTML">HTML</option>
+
+  								<option value="CSS">CSS</option>
 								<option value="Java">Java</option>
 								<option value="Frameworks">frameworks</option>
 							</select>
 							
 						
 						
-						<input ref={tipRef} className="tipText" type="tip" name="tipstext" id="tipstext"  placeholder="write your tip"  required  maxLength="240"></input>
-						
+						<textarea ref={tipRef} className="tipText" type="tip" name="tipstext" id="tipstext"  placeholder="write your tip"  required  maxLength="240"></textarea>
+					    <i className="fas fa-code icon-user" style={{cursor:"pointer"}} onClick={()=>changestate(!codestate)}></i>
+						< Addcode addstate={codestate}/>	
 						
 
 						

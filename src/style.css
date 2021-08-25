@@ -21,7 +21,7 @@
   input:focus {
 	background: #ffffff;
   }
-  input[type="tip"]{
+  textarea[type="tip"]{
 	-webkit-appearance: none;
 	appearance: none;
   
@@ -36,7 +36,20 @@
 	
   }
   
-
+ textarea[type="code"]{
+	-webkit-appearance: none;
+	appearance: none;
+  
+	width: 100%;
+	border: 1px solid #a09b9b;
+	margin: 0;
+  
+	font-family: inherit;
+	font-size: 90%;
+    height: 40%;
+	box-sizing: border-box;
+	
+  }
   input[type="inp"]{
 	-webkit-appearance: none;
 	appearance: none;
@@ -287,3 +300,35 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+#trending_page:active{
+    color: #047091;
+    
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ffffff;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: #00acee;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #cbd3ce;
+  }
+  .icon-user {
+         position:relative;
+         top: -30px;
+         
+    }

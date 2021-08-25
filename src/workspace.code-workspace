@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "..\\..\\..\\projects\\tipster"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "tipster"
+	}
+}

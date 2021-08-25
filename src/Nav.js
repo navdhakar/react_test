@@ -8,12 +8,16 @@ import PanelRight from './PanelRight'
 export default function Nav() {
 
    const [nav_tips, loadTips] = useState([]);
+   const [search_handler,search_changer] = useState(["Search"])
 
     const search_data = useRef();
     function search(e){
         e.preventDefault();
         console.log(search_data.current.value)
-        
+
+        if(search_handler=="Search"){
+        search_changer("Clear")
+
         fetch('/search_requests', {
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
           mode: 'cors',
@@ -37,10 +41,15 @@ export default function Nav() {
         var tip = data[i]
         
       loadTips(previousTips => 
-        [...previousTips, {name:tip.name, group:tip.group, tip:tip.tip, personal_url:tip.personal_url, tip_id:tip.tip_id, likes:tip.likes}]
+        [...previousTips, {name:tip.name, group:tip.group, tip:tip.tip, personal_url:tip.personal_url, code:tip.code, tip_id:tip.tip_id, likes:tip.likes}]
       )
       }
           })
+        }
+        else {
+          search_changer("Search")
+          loadTips([])
+        }
     }
     return (
      <> 
@@ -53,13 +62,15 @@ export default function Nav() {
 			<form>
 				
 				<input type="text" ref={search_data} name="search" id="search"  placeholder="search any handle" style={{"marginTop": "14px", "marginBottom":"5px"}}></input>
-				<input type="submit" id="searchbtn" value="Search" style={{backgroundColor:"#00acee"}} onClick={search} ></input>
+				<input type="submit" id="searchbtn" value={search_handler} style={{backgroundColor:"#00acee"}} onClick={search}  ></input>
 			</form>
           </div>      
        
             </div>
             </div>
+            <div className="card">
       <PanelLeft tips={nav_tips} />
+      </div>
     </>    
     )
 }

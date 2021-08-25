@@ -1,11 +1,15 @@
 import React, {useState} from 'react'
 import './style.css'
-import pyhton from './python.jpg'
+import python from './python.jpg'
 import js from './js.png'
+
+import SyntaxHighlighter from 'react-syntax-highlighter';
+
+
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 export default function Tiptemplate({tip}) {
 
 const [like, like_counter] = useState(tip.likes)
-const [color, change_color] = useState([])
 const [isClick, setClick] = useState(false);
 
 function like_changer(props){
@@ -72,11 +76,80 @@ function like_changer(props){
             });
     }
 }
+function Code(code){
+
+
+
+if(tip.group=="Python"){
+
+return <SyntaxHighlighter language="python" style={docco}  lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}}
+  wrapLines={true} >
+{code.code}
+</SyntaxHighlighter>
+}
+
+
+if(tip.group=="Javascript"){
+
+return <SyntaxHighlighter language="javascript" style={docco}  lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}}
+  wrapLines={true} >
+{code.code}
+</SyntaxHighlighter>
+}
+
+
+if(tip.group=="Java"){
+
+return <SyntaxHighlighter language="java" style={docco}  lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}}
+  wrapLines={true} >
+{code.code}
+</SyntaxHighlighter>
+}
+if(tip.group=="C"){
+
+return <SyntaxHighlighter language="c" style={docco}  lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}}
+  wrapLines={true} >
+{code.code}
+</SyntaxHighlighter>
+}
+
+
+if(tip.group=="C++"){
+
+return <SyntaxHighlighter language="cpp" style={docco}  lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}}
+  wrapLines={true} >
+{code.code}
+</SyntaxHighlighter>
+}
+
+if(tip.group=="HTML"){
+
+return <SyntaxHighlighter language="html" style={docco}  lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}}
+  wrapLines={true} >
+{code.code}
+</SyntaxHighlighter>
+}
+if(tip.group=="CSS"){
+
+return <SyntaxHighlighter language="css" style={docco}  lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}}
+  wrapLines={true} >
+{code.code}
+</SyntaxHighlighter>
+}
+else {
+
+return <SyntaxHighlighter style={docco}  lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}}
+  wrapLines={true} >
+{code.code}
+</SyntaxHighlighter>
+}
+
+}
 function Avatar(language){
     
 if(language.language=="Python"){
 
-    return  <img className="avatar" src={pyhton} alt="user" style={{width:"40px", height:"40px", borderRadius:"20px"}}/>
+    return  <img className="avatar" src={python} alt="user" style={{width:"40px", height:"40px", borderRadius:"20px"}}/>
 }
 if(language.language=="Javascript"){
 
@@ -95,8 +168,9 @@ const changeColour = isClick ? "#e01425" : "grey"
             <span className="name" style={{color:"#00acee", fontWeight:"bold", }}>{tip.group}</span>
             <span className="name">@{tip.name}</span>
             <p className="tip">{tip.tip}</p>
+
+           <Code code={tip.code} />
             <a href={tip.personal_url}>{tip.personal_url}</a>
-           
             < div className="col-sm-11" > 
             <i class="fas fa-heart" isClick={isClick} onClick={() => {setClick(!isClick);
                 like_changer(isClick);
