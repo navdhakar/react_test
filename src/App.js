@@ -4,11 +4,14 @@ import PanelRight from './PanelRight'
 import Nav from './Nav'
 import PanelLeft from './PanelLeft'
 import './style.css'
+const PAGE_NUMBER = 1;
 export default function App() {
     
    const [tips, loadTips] = useState([
      
    ]) 
+   /*const [state, setstate] = useState([])
+   const [page, setPage] = useState(PAGE_NUMBER)*/
    const [home, changehome] = useState(["#00acee"])
    const [trending, changetrending] = useState(["#000000"])
     useEffect(()=>{
@@ -44,6 +47,22 @@ export default function App() {
       )
 
     }, [])
+    //for implementing infinte scroll
+    /*const scrollToEnd = () => {
+      setPage(page+1)
+    }
+
+    window.onscroll = function(){
+
+      if(
+        window.innerHeight + document.documentElement.scrollTop
+        === document.documentElement.offsetHeight
+
+      ){
+        scrollToEnd()
+      }
+    }*/
+
     function Trending(){
 
     fetch('/trending_page', {
@@ -129,12 +148,12 @@ export default function App() {
 
         
     <>
-    <div className = "row">
+    <div className = "row" style={{marginLeft:"10px"}}>
     < Nav/>
     <div></div>
     </div>
     <div className="row">
-    <div className = "col">
+    <div className = "col" style={{marginLeft:"10px"}}>
     <div className="card" style={{ "marginTop":"10px"}}>   
 	<div className="row">
 	<div className="col-sm"  id="home_page" style={{"cursor":"pointer", "float":"right", fontSize:"20px", color:home}} onClick={() => {Home();
@@ -151,8 +170,13 @@ export default function App() {
     </div>			
     </div>
     </div>
-      <div className="col">  
-    <div className = "col" style={{"marginRight":"-30%"}}> <PanelRight /></div>
+      <div className="col">
+
+          <button className="btn btn-primary" style={{backgroundColor:"#00acee", border:'0px', position:"fixed"}} onClick={Home}>Load more</button>
+          
+           
+    <div className = "col" style={{ marginTop:"30px"}}> <PanelRight /></div>
+    
     </div>
     </div>
     <div className="row">

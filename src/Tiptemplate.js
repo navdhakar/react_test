@@ -2,7 +2,12 @@ import React, {useState} from 'react'
 import './style.css'
 import python from './python.jpg'
 import js from './js.png'
-
+import java from './java.png'
+import c_lang from './C_lang.png'
+import cpp_lang from './cpp_lang.png'
+import html from './html.png'
+import css from './css.png'
+import other from  './else.png'
 import SyntaxHighlighter from 'react-syntax-highlighter';
 
 
@@ -155,9 +160,34 @@ if(language.language=="Javascript"){
 
     return <img className="avatar" src={js} alt="user" style={{width:"40px", height:"40px", borderRadius:"20px"}}/>
 }
+
+if(language.language=="Java"){
+
+    return <img className="avatar" src={java} alt="user" style={{width:"40px", height:"40px", borderRadius:"20px"}}/>
+}
+
+if(language.language=="C"){
+
+    return <img className="avatar" src={c_lang} alt="user" style={{width:"40px", height:"40px", borderRadius:"20px"}}/>
+}
+
+if(language.language=="C++"){
+
+    return <img className="avatar" src={cpp_lang} alt="user" style={{width:"40px", height:"40px", borderRadius:"20px"}}/>
+}
+
+if(language.language=="HTML"){
+
+    return <img className="avatar" src={html} alt="user" style={{width:"40px", height:"40px", borderRadius:"20px"}}/>
+}
+
+if(language.language=="css"){
+
+    return <img className="avatar" src={css} alt="user" style={{width:"40px", height:"40px", borderRadius:"20px"}}/>
+}
 else {
 
-    return <img className="avatar" src={js} alt="user" style={{width:"40px", height:"40px", borderRadius:"20px"}}/>
+    return <img className="avatar" src={other} alt="user" style={{width:"40px", height:"40px", borderRadius:"20px"}}/>
 }
 }
 
