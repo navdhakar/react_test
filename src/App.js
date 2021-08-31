@@ -148,12 +148,12 @@ export default function App() {
 
         
     <>
-    <div className = "row" style={{marginLeft:"10px"}}>
+    <div className = "row" >
     < Nav/>
     <div></div>
     </div>
     <div className="row">
-    <div className = "col" style={{marginLeft:"10px"}}>
+    <div className = "col" >
     <div className="card" style={{ "marginTop":"10px"}}>   
 	<div className="row">
 	<div className="col-sm"  id="home_page" style={{"cursor":"pointer", "float":"right", fontSize:"20px", color:home}} onClick={() => {Home();

@@ -102,8 +102,8 @@ const CodeRef = useRef()
 						
 
 						
-						<input type="inp" name="namehandle" ref={nameRef} className="namehandle" placeholder="name"  required></input>
-						<input type="inp" name="urlhandle" ref={handleRef} className="urlhandle" placeholder="handle"  required></input>
+						<input type="inp" name="namehandle" ref={nameRef} className="namehandle" placeholder="name"   required></input>
+						<input type="inp" name="urlhandle" ref={handleRef} className="urlhandle" placeholder="handle:handle can be any link related to your social accounts(twitter, facebook, portfolio page)" required></input>
 						<button className="btn btn-primary" style={{backgroundColor:"#00acee", border:'0px'}} onClick={Tip_submit}>Tip</button>
 					</form>
 				</div>
