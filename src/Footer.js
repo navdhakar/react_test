@@ -21,15 +21,14 @@ export default function Footer() {
                 <div className="col-lg-3 col-md-6 col-sm-6 col-12 px-5 mb-5">
                     <h3 className="tm-text-primary mb-4 tm-footer-title" style={{"color": "#047091"}}>Our Links</h3>
                     <ul className="tm-footer-links pl-0">
-                        <li><a href="#">Advertise</a></li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Our Company</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="https://navdeep.xyz/">Blog</a></li>
+                        <li><a href="#">API</a></li>
+                        
                     </ul>
                 </div>
                 <div className="col-lg-6 col-md-12 col-12 px-5 mb-5">
                     <h3 className="tm-text-primary mb-4 tm-footer-title" style={{"color": "#047091"}}>About Tipster</h3>
-                    <p>Tipster is a place where you get and post daily tips and trick related to different programming languages</p>
+                    <p>Tipster is a place where you can read and post daily tips and trick related to different programming languages</p>
                 </div>
             </div>
             <div className="row">
