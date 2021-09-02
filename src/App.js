@@ -99,9 +99,9 @@ export default function App() {
     
     }
 
-    function Home(e){
-    e.preventDefault();
-    fetch('/home_page', {
+    function Home(){
+    
+    fetch(`${server}/home_page`, {
       method: 'GET', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors',
       // no-cors, *cors, same-origin
