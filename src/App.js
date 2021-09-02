@@ -33,7 +33,7 @@ export default function App() {
     })
       .then((res) => res.json())
       .then((data)=>{
-  
+      loadTips([])
       const tips_data = {}
       for(let i=0;i<=Object.keys(data).length-1;i++){
         var tip = data[i]
@@ -157,7 +157,7 @@ export default function App() {
     <div className = "col" >
     <div className="card" style={{ "marginTop":"10px"}}>   
 	<div className="row">
-	<div className="col-sm"  id="home_page" style={{"cursor":"pointer", "float":"right", fontSize:"20px", color:home}} onClick={() => {Home(e);
+	<div className="col-sm"  id="home_page" style={{"cursor":"pointer", "float":"right", fontSize:"20px", color:home}} onClick={() => {Home();
   changeFocus("home"); 
   }}>Home</div>
 					
@@ -173,7 +173,7 @@ export default function App() {
     </div>
       <div className="col">
 
-          <button className="btn btn-primary" style={{backgroundColor:"#00acee", border:'0px', position:"fixed"}} onClick={Home(e)}>Load more</button>
+          <button className="btn btn-primary" style={{backgroundColor:"#00acee", border:'0px', position:"fixed"}} onClick={Home}>Load more</button>
           
            
     <div className = "col" style={{ marginTop:"30px"}}> <PanelRight /></div>
