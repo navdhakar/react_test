@@ -4,6 +4,7 @@ import PanelRight from './PanelRight'
 import Nav from './Nav'
 import PanelLeft from './PanelLeft'
 import './style.css'
+const server = "https://tipsterserver.herokuapp.com/"
 const PAGE_NUMBER = 1;
 export default function App() {
     
@@ -16,7 +17,7 @@ export default function App() {
    const [trending, changetrending] = useState(["#000000"])
     useEffect(()=>{
 
-    fetch('/home_page', {
+    fetch(`${server}/home_page`, {
       method: 'GET', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors',
       // no-cors, *cors, same-origin
@@ -65,7 +66,7 @@ export default function App() {
 
     function Trending(){
 
-    fetch('/trending_page', {
+    fetch(`${server}/trending_page`, {
       method: 'GET', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors',
       // no-cors, *cors, same-origin

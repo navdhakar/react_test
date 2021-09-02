@@ -1,6 +1,8 @@
 import './style.css'
 import React, {useRef,useEffect, useState} from 'react'
 import { v4 as uuidv4 } from 'uuid';
+const server = "https://tipsterserver.herokuapp.com/"
+
 export default function PanelRight() {
 	const[codestate, changestate] = useState(false)
 const nameRef = useRef()
@@ -31,7 +33,7 @@ const CodeRef = useRef()
 		  tip_dom_id:uuidv4()
     }
 
-    fetch('/proctor_register', {
+    fetch(`${server}/proctor_register`, {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors',
         body: JSON.stringify(tip_data),
