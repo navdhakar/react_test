@@ -99,8 +99,8 @@ export default function App() {
     
     }
 
-    function Home(){
-
+    function Home(e){
+    e.preventDefault();
     fetch('/home_page', {
       method: 'GET', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors',
@@ -157,7 +157,7 @@ export default function App() {
     <div className = "col" >
     <div className="card" style={{ "marginTop":"10px"}}>   
 	<div className="row">
-	<div className="col-sm"  id="home_page" style={{"cursor":"pointer", "float":"right", fontSize:"20px", color:home}} onClick={() => {Home();
+	<div className="col-sm"  id="home_page" style={{"cursor":"pointer", "float":"right", fontSize:"20px", color:home}} onClick={() => {Home(e);
   changeFocus("home"); 
   }}>Home</div>
 					
@@ -173,7 +173,7 @@ export default function App() {
     </div>
       <div className="col">
 
-          <button className="btn btn-primary" style={{backgroundColor:"#00acee", border:'0px', position:"fixed"}} onClick={Home}>Load more</button>
+          <button className="btn btn-primary" style={{backgroundColor:"#00acee", border:'0px', position:"fixed"}} onClick={Home(e)}>Load more</button>
           
            
     <div className = "col" style={{ marginTop:"30px"}}> <PanelRight /></div>
