@@ -2,7 +2,7 @@
   "name": "react_test",
   "version": "0.1.0",
   "private": true,
-  "proxy": " https://tipsterserver.herokuapp.com/",
+
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -39,5 +39,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "https://tipsterserver.herokuapp.com/"
 }
