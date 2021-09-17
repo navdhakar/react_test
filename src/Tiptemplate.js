@@ -24,10 +24,10 @@ const [isClick, setClick] = useState(false);
 
 function like_changer(props){
     const status = props
-    console.log(status)
+    
     if(status){
         like_counter(like-1);
-        console.log("liked removed")
+        
             const like_data = {
               tip_id:tip.tip_id,
               like:'dec'
@@ -50,7 +50,7 @@ function like_changer(props){
           })
             .then((res) => res.json())
             .then((data) => {
-              console.log(data);
+              
 
             });
     }
@@ -58,7 +58,7 @@ function like_changer(props){
 
         like_counter(like+1);
     
-           console.log("liked")
+           
            const like_data = {
               tip_id:tip.tip_id,
               like:'inc'
@@ -81,7 +81,7 @@ function like_changer(props){
           })
             .then((res) => res.json())
             .then((data) => {
-              console.log(data);
+              
 
             });
     }

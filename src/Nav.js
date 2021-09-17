@@ -13,7 +13,7 @@ export default function Nav() {
     const search_data = useRef();
     function search(e){
         e.preventDefault();
-        console.log(search_data.current.value)
+        
 
         if(search_handler=="Search"){
         search_changer("Clear")
@@ -35,8 +35,8 @@ export default function Nav() {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
-            console.log(Object.keys(data).length)
+           
+           
       for(let i=0;i<=Object.keys(data).length-1;i++){
         var tip = data[i]
         
