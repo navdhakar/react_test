@@ -1,8 +1,7 @@
 import './style.css'
 import React, {useRef,useEffect, useState} from 'react'
 import { v4 as uuidv4 } from 'uuid';
-const server = "https://tipsterserver.herokuapp.com/"
-
+const server = process.env.NODE_ENV == 'production'?"https://tipsterserver.herokuapp.com/":"http://127.0.0.1:8000"
 export default function PanelRight() {
 	const[codestate, changestate] = useState(false)
 const nameRef = useRef()
@@ -72,7 +71,7 @@ const CodeRef = useRef()
 		
 
                 
-	    <div className="card " style={{ "marginTop":"10px", position:"fixed"}}>
+	    <div className="card panel-right" style={{ "marginTop":"10px", position:"fixed"}}>
 		
 				
 				<h4 style={{color:"#00acee", marginBottom:"-20px"}}>Create a tip</h4>

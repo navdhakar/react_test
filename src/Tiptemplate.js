@@ -12,6 +12,11 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 
 
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+const server =
+  process.env.NODE_ENV == "production"
+    ? "https://tipsterserver.herokuapp.com/"
+    : "http://127.0.0.1:8000";
+
 export default function Tiptemplate({tip}) {
 
 const [like, like_counter] = useState(tip.likes)
@@ -28,7 +33,7 @@ function like_changer(props){
               like:'dec'
               }
 
-            fetch('/like_counter', {
+            fetch(`${server}/like_counter`, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             mode: 'cors',
             body: JSON.stringify(like_data),
@@ -59,7 +64,7 @@ function like_changer(props){
               like:'inc'
               }
 
-            fetch('/like_counter', {
+            fetch(`${server}/like_counter`, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             mode: 'cors',
             body: JSON.stringify(like_data),
