@@ -207,7 +207,7 @@ const changeColour = isClick ? "#e01425" : "grey"
            <Code code={tip.code} />
             <a href={tip.personal_url}>{tip.personal_url}</a>
             < div className="col-sm-11" > 
-            <i class="fas fa-heart" isClick={isClick} onClick={() => {setClick(!isClick);
+            <i className="fas fa-heart" onClick={() => {setClick(!isClick);
                 like_changer(isClick);
 
                 }} style={{color:changeColour, cursor:"pointer"}}>{like}</i>

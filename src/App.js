@@ -47,6 +47,7 @@ export default function App() {
               code: tip.code,
               tip_id: tip.tip_id,
               likes: tip.likes,
+              tip_dom_id: tip.tip_dom_id
             },
           ]);
         }
@@ -100,6 +101,7 @@ export default function App() {
               code: tip.code,
               tip_id: tip.tip_id,
               likes: tip.likes,
+              tip_dom_id: tip.tip_dom_id
             },
           ]);
         }

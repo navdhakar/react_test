@@ -5,6 +5,10 @@ import React, {useRef, useState} from 'react'
 import PanelLeft from './PanelLeft'
 
 import PanelRight from './PanelRight'
+const server =
+  process.env.NODE_ENV == "production"
+    ? "https://tipsterserver.herokuapp.com/"
+    : "http://127.0.0.1:8000";
 export default function Nav() {
 
    const [nav_tips, loadTips] = useState([]);
@@ -18,7 +22,7 @@ export default function Nav() {
         if(search_handler=="Search"){
         search_changer("Clear")
 
-        fetch('/search_requests', {
+        fetch(`${server}/search_requests`, {
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
           mode: 'cors',
           body: JSON.stringify({search_handle:search_data.current.value}),
