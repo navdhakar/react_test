@@ -1,10 +1,7 @@
 import "./style.css";
 import React, { useRef, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-const server =
-  process.env.NODE_ENV == "production"
-    ? "https://tipsterserver.herokuapp.com/"
-    : "http://127.0.0.1:8000";
+const server = process.env.NODE_ENV == "production" ? "https://tipsterserver.herokuapp.com/" : "http://127.0.0.1:8000";
 export default function PanelRight() {
   const [codestate, changestate] = useState(false);
   const nameRef = useRef();
@@ -48,16 +45,7 @@ export default function PanelRight() {
   function Addcode(addstate) {
     if (addstate.addstate == true) {
       return (
-        <textarea
-          ref={CodeRef}
-          className="tipText"
-          type="code"
-          name="tipstext"
-          id="tipstext"
-          placeholder="write your code"
-          required
-          maxLength="240"
-        ></textarea>
+        <textarea ref={CodeRef} className="tipText" type="code" name="tipstext" id="tipstext" placeholder="write your code" required maxLength="240"></textarea>
       );
     } else {
       return null;
@@ -65,10 +53,7 @@ export default function PanelRight() {
   }
 
   return (
-    <div
-      className="card panel-right"
-      style={{ marginTop: "10px", position: "fixed" }}
-    >
+    <div className="card panel-right" style={{ marginTop: "10px", position: "fixed" }}>
       <h4 style={{ color: "#00acee", marginBottom: "-20px" }}>Create a tip</h4>
 
       <h5 id="message" style={{ style: "red" }}></h5>
@@ -76,12 +61,20 @@ export default function PanelRight() {
 
       <div className="row">
         <form id="myform" name="myform">
+          <textarea
+            ref={tipRef}
+            className="tipText"
+            type="tip"
+            name="tipstext"
+            id="tipstext"
+            placeholder="write your tip:max word limit 240"
+            required
+            maxLength="240"
+          ></textarea>
+          <i className="fas fa-code icon-user" style={{ cursor: "pointer" }} onClick={() => changestate(!codestate)}></i>
+          <Addcode addstate={codestate} />
           <label>choose a language:</label>
-          <select
-            ref={groupRef}
-            id="languages"
-            style={{ border: "1px solid #dddddd" }}
-          >
+          <select ref={groupRef} id="languages" style={{ border: "1px solid #dddddd" }}>
             <option value="Javascript">Javascript</option>
             <option value="Python">Python</option>
             <option value="C">C</option>
@@ -93,32 +86,7 @@ export default function PanelRight() {
             <option value="Java">Java</option>
             <option value="Frameworks">frameworks</option>
           </select>
-
-          <textarea
-            ref={tipRef}
-            className="tipText"
-            type="tip"
-            name="tipstext"
-            id="tipstext"
-            placeholder="write your tip"
-            required
-            maxLength="240"
-          ></textarea>
-          <i
-            className="fas fa-code icon-user"
-            style={{ cursor: "pointer" }}
-            onClick={() => changestate(!codestate)}
-          ></i>
-          <Addcode addstate={codestate} />
-
-          <input
-            type="inp"
-            name="namehandle"
-            ref={nameRef}
-            className="namehandle"
-            placeholder="name"
-            required
-          ></input>
+          <input type="inp" name="namehandle" ref={nameRef} className="namehandle" placeholder="name" required></input>
           <input
             type="inp"
             name="urlhandle"
@@ -127,11 +95,7 @@ export default function PanelRight() {
             placeholder="handle:handle can be any link related to your social accounts(twitter, facebook, portfolio page)"
             required
           ></input>
-          <button
-            className="btn btn-primary"
-            style={{ backgroundColor: "#00acee", border: "0px" }}
-            onClick={Tip_submit}
-          >
+          <button className="btn btn-primary" style={{ backgroundColor: "#00acee", border: "0px" }} onClick={Tip_submit}>
             Tip
           </button>
         </form>

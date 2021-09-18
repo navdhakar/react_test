@@ -4,13 +4,11 @@ import PanelRight from "./PanelRight";
 import Nav from "./Nav";
 import PanelLeft from "./PanelLeft";
 import "./style.css";
-const server =
-  process.env.NODE_ENV == "production"
-    ? "https://tipsterserver.herokuapp.com/"
-    : "http://127.0.0.1:8000";
+const server = process.env.NODE_ENV == "production" ? "https://tipsterserver.herokuapp.com/" : "http://127.0.0.1:8000";
 
 export default function App() {
   const [tips, loadTips] = useState([]);
+
   /*const [state, setstate] = useState([])
    const [page, setPage] = useState(PAGE_NUMBER)*/
   const [home, changehome] = useState(["#00acee"]);
@@ -53,6 +51,7 @@ export default function App() {
         }
       });
   }, []);
+
   //for implementing infinte scroll
   /*const scrollToEnd = () => {
       setPage(page+1)
@@ -69,6 +68,26 @@ export default function App() {
       }
     }*/
 
+  function updatepageview(pagetype) {
+    const data = {
+      page: pagetype,
+    };
+    fetch(`${server}/update_page_view`, {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      mode: "cors",
+      body: JSON.stringify(data),
+      // no-cors, *cors, same-origin
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: "same-origin", // include, *same-origin, omit
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      redirect: "follow", // manual, *follow, error
+      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      // body data type must match "Content-Type" header
+    });
+  }
   function Trending() {
     fetch(`${server}/trending_page`, {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
@@ -178,6 +197,7 @@ export default function App() {
                 onClick={() => {
                   Home();
                   changeFocus("home");
+                  updatepageview("home");
                 }}
               >
                 Home
@@ -195,6 +215,7 @@ export default function App() {
                 onClick={() => {
                   Trending();
                   changeFocus("trending");
+                  updatepageview("trending");
                 }}
               >
                 Trending
@@ -216,7 +237,10 @@ export default function App() {
               border: "0px",
               position: "fixed",
             }}
-            onClick={Home}
+            onClick={() => {
+              Home();
+              updatepageview("loadmore");
+            }}
           >
             Load more
           </button>

@@ -257,7 +257,7 @@ export default function Tiptemplate({ tip }) {
       );
     }
 
-    if (language.language == "css") {
+    if (language.language == "CSS") {
       return (
         <img
           className="avatar"

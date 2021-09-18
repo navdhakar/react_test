@@ -4,19 +4,34 @@ import React, { useRef, useState } from "react";
 import PanelLeft from "./PanelLeft";
 
 import PanelRight from "./PanelRight";
-const server =
-  process.env.NODE_ENV == "production"
-    ? "https://tipsterserver.herokuapp.com/"
-    : "http://127.0.0.1:8000";
+const server = process.env.NODE_ENV == "production" ? "https://tipsterserver.herokuapp.com/" : "http://127.0.0.1:8000";
 
 export default function Nav() {
   const [nav_tips, loadTips] = useState([]);
   const [search_handler, search_changer] = useState(["Search"]);
 
   const search_data = useRef();
-  function search(e) {
-    e.preventDefault();
-
+  function updatepageview(pagetype) {
+    const data = {
+      page: pagetype,
+    };
+    fetch(`${server}/update_page_view`, {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      mode: "cors",
+      body: JSON.stringify(data),
+      // no-cors, *cors, same-origin
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: "same-origin", // include, *same-origin, omit
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      redirect: "follow", // manual, *follow, error
+      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      // body data type must match "Content-Type" header
+    });
+  }
+  const search = (event) => {
     if (search_handler == "Search") {
       search_changer("Clear");
 
@@ -59,31 +74,26 @@ export default function Nav() {
       search_changer("Search");
       loadTips([]);
     }
-  }
+    event.preventDefault();
+  };
   return (
     <>
       <div className="card">
         <div className="row">
-          <div className="col">
+          <div className="col-4">
             <img src={Logo} alt="Logo" />
           </div>
-          <div className="col">
+          <div className="col-8">
             <form>
               <input
                 type="text"
                 ref={search_data}
                 name="search"
                 id="search"
-                placeholder="search any handle"
-                style={{ marginTop: "14px", marginBottom: "5px" }}
+                placeholder="search any handle or language(Javascript,Python,CSS,Java,C,C++ )"
+                style={{ marginTop: "14px", marginBottom: "5px", width: "60%" }}
               ></input>
-              <input
-                type="submit"
-                id="searchbtn"
-                value={search_handler}
-                style={{ backgroundColor: "#00acee" }}
-                onClick={search}
-              ></input>
+              <input type="submit" id="searchbtn" value={search_handler} style={{ backgroundColor: "#00acee" }} onClick={search}></input>
             </form>
           </div>
         </div>
