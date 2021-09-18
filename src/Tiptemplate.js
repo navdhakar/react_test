@@ -22,10 +22,17 @@ export default function Tiptemplate({ tip }) {
 
   function like_changer(props) {
     const status = props;
+<<<<<<< HEAD
 
     if (status) {
       like_counter(like - 1);
 
+=======
+    console.log(status);
+    if (status) {
+      like_counter(like - 1);
+      console.log("liked removed");
+>>>>>>> development
       const like_data = {
         tip_id: tip.tip_id,
         like: "dec",
@@ -47,10 +54,20 @@ export default function Tiptemplate({ tip }) {
         // body data type must match "Content-Type" header
       })
         .then((res) => res.json())
+<<<<<<< HEAD
         .then((data) => {});
     } else {
       like_counter(like + 1);
 
+=======
+        .then((data) => {
+          console.log(data);
+        });
+    } else {
+      like_counter(like + 1);
+
+      console.log("liked");
+>>>>>>> development
       const like_data = {
         tip_id: tip.tip_id,
         like: "inc",
@@ -72,7 +89,13 @@ export default function Tiptemplate({ tip }) {
         // body data type must match "Content-Type" header
       })
         .then((res) => res.json())
+<<<<<<< HEAD
         .then((data) => {});
+=======
+        .then((data) => {
+          console.log(data);
+        });
+>>>>>>> development
     }
   }
   function Code(code) {

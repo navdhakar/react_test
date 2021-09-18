@@ -15,7 +15,19 @@ export default function PanelRight() {
   function Tip_submit(e) {
     if (CodeRef.current.value == "" || null) {
       CodeRef.current.value = "undefined";
+<<<<<<< HEAD
     }
+=======
+      console.log(CodeRef.current.value);
+    }
+    console.log("tip submitted");
+    console.log(nameRef.current.value);
+    console.log(tipRef.current.value);
+    console.log(handleRef.current.value);
+    console.log(CodeRef.current.value);
+    console.log(groupRef.current.value);
+    console.log(uuidv4());
+>>>>>>> development
 
     const tip_data = {
       tip: tipRef.current.value,
@@ -42,11 +54,23 @@ export default function PanelRight() {
       // body data type must match "Content-Type" header
     })
       .then((res) => res.json())
+<<<<<<< HEAD
       .then((data) => {});
   }
 
   function Addcode(addstate) {
     if (addstate.addstate == true) {
+=======
+      .then((data) => {
+        console.log(data);
+      });
+  }
+
+  function Addcode(addstate) {
+    console.log(addstate);
+    if (addstate.addstate == true) {
+      console.log("true");
+>>>>>>> development
       return (
         <textarea
           ref={CodeRef}
@@ -60,6 +84,10 @@ export default function PanelRight() {
         ></textarea>
       );
     } else {
+<<<<<<< HEAD
+=======
+      console.log("false");
+>>>>>>> development
       return null;
     }
   }

@@ -45,6 +45,10 @@ export default function Nav() {
                 code: tip.code,
                 tip_id: tip.tip_id,
                 likes: tip.likes,
+<<<<<<< HEAD
+=======
+                tip_dom_id: tip.tip_dom_id,
+>>>>>>> development
               },
             ]);
           }
