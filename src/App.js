@@ -47,7 +47,7 @@ export default function App() {
               code: tip.code,
               tip_id: tip.tip_id,
               likes: tip.likes,
-              tip_dom_id: tip.tip_dom_id
+              tip_dom_id: tip.tip_dom_id,
             },
           ]);
         }
@@ -101,7 +101,7 @@ export default function App() {
               code: tip.code,
               tip_id: tip.tip_id,
               likes: tip.likes,
-              tip_dom_id: tip.tip_dom_id
+              tip_dom_id: tip.tip_dom_id,
             },
           ]);
         }
@@ -161,17 +161,17 @@ export default function App() {
         <Nav />
         <div></div>
       </div>
-      
+
       <div className="row">
-        <div className="col-8 left-panel" >
-          <div className="card" style={{ marginTop: "10px", }}>
+        <div className="col-8 left-panel">
+          <div className="card" style={{ marginTop: "10px" }}>
             <div className="row">
               <div
                 className="col-6"
                 id="home_page"
                 style={{
                   cursor: "pointer",
-                 
+
                   fontSize: "20px",
                   color: home,
                 }}
@@ -188,7 +188,7 @@ export default function App() {
                 id="trending_page"
                 style={{
                   cursor: "pointer",
-           
+
                   fontSize: "20px",
                   color: trending,
                 }}
@@ -201,13 +201,13 @@ export default function App() {
               </div>
             </div>
 
-              <hr></hr>
+            <hr></hr>
             <div className="row">
               <PanelLeft tips={tips} />
             </div>
           </div>
         </div>
-        
+
         <div className="col-4 right-panel">
           <button
             className="btn btn-primary"
@@ -227,7 +227,7 @@ export default function App() {
           </div>
         </div>
       </div>
-      
+
       <div className="row">
         <Footer />
       </div>
