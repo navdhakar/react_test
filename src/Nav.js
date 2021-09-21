@@ -90,8 +90,9 @@ export default function Nav() {
                 ref={search_data}
                 name="search"
                 id="search"
-                placeholder="search any handle or language(Javascript,Python,CSS,Java,C,C++ )"
-                style={{ marginTop: "14px", marginBottom: "5px", width: "60%" }}
+                className="search"
+                placeholder="Javascript, Python, https://twitter.com/dev_navdeep"
+                style={{ width: "70%", marginTop: "5px" }}
               ></input>
               <input type="submit" id="searchbtn" value={search_handler} style={{ backgroundColor: "#00acee" }} onClick={search}></input>
             </form>

@@ -229,13 +229,13 @@ export default function App() {
           </div>
         </div>
 
-        <div className="col-4 right-panel">
+        <div className="col-4">
           <button
             className="btn btn-primary"
             style={{
               backgroundColor: "#00acee",
               border: "0px",
-              position: "fixed",
+              position: "absolute",
             }}
             onClick={() => {
               Home();
@@ -245,8 +245,7 @@ export default function App() {
             Load more
           </button>
 
-          <div className="col right-panel" style={{ marginTop: "30px" }}>
-            {" "}
+          <div style={{ marginTop: "30px" }}>
             <PanelRight />
           </div>
         </div>

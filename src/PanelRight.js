@@ -53,12 +53,11 @@ export default function PanelRight() {
   }
 
   return (
-    <div className="card panel-right" style={{ marginTop: "10px", position: "fixed" }}>
+    <div className="card right-panel" style={{ marginTop: "10px", position: "fixed" }}>
       <h4 style={{ color: "#00acee", marginBottom: "-20px" }}>Create a tip</h4>
 
       <h5 id="message" style={{ style: "red" }}></h5>
       <hr></hr>
-
       <div className="row">
         <form id="myform" name="myform">
           <textarea
@@ -73,7 +72,9 @@ export default function PanelRight() {
           ></textarea>
           <i className="fas fa-code icon-user" style={{ cursor: "pointer" }} onClick={() => changestate(!codestate)}></i>
           <Addcode addstate={codestate} />
-          <label>choose a language:</label>
+          <label className="choose" style={{ color: "#00acee", fontSize: "20px" }}>
+            choose a language:
+          </label>
           <select ref={groupRef} id="languages" style={{ border: "1px solid #dddddd" }}>
             <option value="Javascript">Javascript</option>
             <option value="Python">Python</option>
