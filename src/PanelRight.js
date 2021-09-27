@@ -9,7 +9,16 @@ export default function PanelRight() {
   const tipRef = useRef();
   const groupRef = useRef();
   const CodeRef = useRef();
+
+  function Addcode(addstate) {
+    if (addstate.addstate == true) {
+      return <textarea ref={CodeRef} className="tipText" type="code" name="tipstext" id="tipstext" placeholder="write your code" required></textarea>;
+    } else {
+      return null;
+    }
+  }
   function Tip_submit(e) {
+    e.preventDefault();
     if (CodeRef.current.value == "" || null) {
       CodeRef.current.value = "undefined";
     }
@@ -28,30 +37,27 @@ export default function PanelRight() {
       mode: "cors",
       body: JSON.stringify(tip_data),
       // no-cors, *cors, same-origin
-      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: "same-origin", // include, *same-origin, omit
+      cache: "no-cache",
+      credentials: "same-origin", // *default, no-cache, reload, force-cache, only-if-cached
+      // include, *same-origin, omit
       headers: {
         "Content-Type": "application/json",
+
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
       redirect: "follow", // manual, *follow, error
       referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
       // body data type must match "Content-Type" header
     })
-      .then((res) => res.json())
-      .then((data) => {});
+      .then((res) => {
+        window.location.reload();
+        return res.json();
+      })
+      .then((data) => console.log(data));
   }
-
-  function Addcode(addstate) {
-    if (addstate.addstate == true) {
-      return (
-        <textarea ref={CodeRef} className="tipText" type="code" name="tipstext" id="tipstext" placeholder="write your code" required maxLength="240"></textarea>
-      );
-    } else {
-      return null;
-    }
-  }
-
+  // let key = "tip_data";
+  // localStorage.setItem(key, JSON.stringify(tip_data));
+  // document.getElementById("myform").reset();
   return (
     <div className="card right-panel" style={{ marginTop: "10px", position: "fixed" }}>
       <h4 style={{ color: "#00acee", marginBottom: "-20px" }}>Create a tip</h4>

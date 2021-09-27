@@ -81,7 +81,7 @@ export default function Nav() {
       <div className="card">
         <div className="row">
           <div className="col-4">
-            <img src={Logo} alt="Logo" />
+            <img src={Logo} alt="Logo" style={{ width: "100px", height: "50px" }} />
           </div>
           <div className="col-8">
             <form>

@@ -32,6 +32,7 @@ export default function App() {
       .then((data) => {
         loadTips([]);
         const tips_data = {};
+
         for (let i = 0; i <= Object.keys(data).length - 1; i++) {
           var tip = data[i];
 
